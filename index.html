@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Local Services Directory</title>
+  <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">ServiceFinder</div>
+    <button class="menu-toggle">☰</button>
+    <ul class="nav-links">
+      <li><a href="#" class="nav-item">Home</a></li>
+      <li><a href="#services" class="nav-item">Services</a></li>
+      <li><a href="#categories" class="nav-item">Categories</a></li>
+      <li><a href="#about" class="nav-item">About</a></li>
+      <li><a href="register.html" class="nav-item">Register</a></li>
+      <li><a href="#" class="nav-item">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="fade-in">Find Trusted Local Services</h1>
+      <p class="fade-in">From plumbers to electricians — connect instantly with verified professionals near you.</p>
+      <button class="cta-button rotate-in">Get Started</button>
+    </div>
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" placeholder="Search by service..." id="searchInput">
+      <select id="categorySelect">
+        <option value="">All Categories</option>
+        <option value="Plumbing">Plumbing</option>
+        <option value="Electrical">Electrical</option>
+        <option value="Carpentry">Carpentry</option>
+        <option value="Cleaning">Cleaning</option>
+      </select>
+      <input type="text" placeholder="Enter location..." id="locationInput">
+      <button onclick="filterServices()">Search</button>
+    </div>
+  </section>
+  
+  <!-- Popular Services Section -->
+  <section id="services" class="services">
+    <h2>Popular Services</h2>
+    <div class="service-cards">
+      <div class="card">
+        <img src="https://scoutnetworkblog.com/wp-content/uploads/2018/11/Plumber-Sink-201709-003.jpg" alt="Plumber">
+        <h3>Plumbing</h3>
+        <p>Location: India</p>
+      </div>
+      <div class="card">
+        <img src="https://media.istockphoto.com/id/1469656864/photo/electrician-engineer-uses-a-multimeter-to-test-the-electrical-installation-and-power-line.jpg?s=612x612&w=0&k=20&c=h70UOpNbJYT5G2oGT-KUeIE3yXwEgsCpr25yR1rnGtU=" alt="Electrician">
+        <h3>Electrical</h3>
+        <p>Location: India</p>
+      </div>
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlW9w63oVgIOQF9qZciQ2xaTCDxJsew55gWg&s" alt="Cleaning">
+        <h3>Cleaning</h3>
+        <p>Location: India</p>
+      </div>
+      <div class="card">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2024/1/381655494/QE/IQ/QE/155969258/home-carpenter-services.jpeg" alt="Carpenter">
+        <h3>Carpentry</h3>
+        <p>Location: India</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section id="categories" class="categories">
+    <h2>Browse by Categories</h2>
+    <div class="category-grid">
+      <div class="category-item">🔧 Plumbers</div>
+      <div class="category-item">💡 Electricians</div>
+      <div class="category-item">🪚 Carpenters</div>
+      <div class="category-item">🧹 Cleaning</div>
+      <div class="category-item">🚚 Movers</div>
+      <div class="category-item">🌿 Gardeners</div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>What Our Users Say</h2>
+    <div class="testimonial-cards">
+      <div class="testimonial">
+        <p>"I found a reliable plumber within minutes. Great platform!"</p>
+        <h4>- Rahul Sharma</h4>
+      </div>
+      <div class="testimonial">
+        <p>"The electrician I booked was professional and on time. Highly recommend!"</p>
+        <h4>- Priya Verma</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About ServiceFinder</h2>
+    <p>We connect you with trusted local service providers — saving you time and hassle. All professionals are verified for your safety and convenience.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 ServiceFinder. All rights reserved.</p>
+    <div class="social-links">
+      <a href="#">Facebook</a> | 
+      <a href="#">Twitter</a> | 
+      <a href="#">Instagram</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
