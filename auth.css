@@ -193,3 +193,21 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
+.profile-pic-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic-container img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00796b;
+  margin-bottom: 10px;
+}
+
+#uploadPic {
+  display: block;
+  margin: 0 auto;
+}

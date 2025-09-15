@@ -1,4 +1,9 @@
 
+
+
+ function scrollToServices() {
+      document.getElementById("services").scrollIntoView({ behavior: "smooth" });
+    }
 // index.js
 // Unified script for Register, Login, Navbar (profile icon) and Profile page.
 // Put <script src="index.js"></script> at end of body on all pages.
@@ -191,6 +196,82 @@ document.addEventListener("DOMContentLoaded", () => {
   attachProfilePage();
 });
 
+
+// Profile Picture Upload
+const uploadPic = document.getElementById("uploadPic");
+const profilePic = document.getElementById("profilePic");
+
+// Load saved profile picture
+document.addEventListener("DOMContentLoaded", () => {
+  const savedPic = localStorage.getItem("profilePic");
+  if (savedPic) {
+    profilePic.src = savedPic;
+  }
+});
+
+// Handle picture upload
+if (uploadPic) {
+  uploadPic.addEventListener("change", (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const imageData = e.target.result;
+        profilePic.src = imageData;
+
+        // Save to localStorage
+        localStorage.setItem("profilePic", imageData);
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+}
+// Booking Modal Logic
+const modal = document.getElementById("bookingModal");
+const closeBtn = document.querySelector(".close");
+const bookingForm = document.getElementById("bookingForm");
+const serviceNameField = document.getElementById("serviceName");
+
+// Open modal when Book Now clicked
+document.querySelectorAll(".book-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    const service = button.dataset.service;
+    serviceNameField.value = service; // Show service name
+    modal.style.display = "flex";
+  });
+});
+
+// Close modal
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Close when clicking outside
+window.addEventListener("click", (e) => {
+  if (e.target === modal) modal.style.display = "none";
+});
+
+// Handle booking form
+bookingForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const bookingDetails = {
+    service: serviceNameField.value,
+    date: document.getElementById("date").value,
+    time: document.getElementById("time").value,
+    location: document.getElementById("location").value,
+    contact: document.getElementById("contact").value,
+  };
+
+  // Save booking in localStorage
+  let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+  bookings.push(bookingDetails);
+  localStorage.setItem("bookings", JSON.stringify(bookings));
+
+  alert("✅ Booking Confirmed!");
+  bookingForm.reset();
+  modal.style.display = "none";
+});
 
 
 

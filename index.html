@@ -26,7 +26,7 @@
     <div class="hero-content">
       <h1 class="fade-in">Find Trusted Local Services</h1>
       <p class="fade-in">From plumbers to electricians — connect instantly with verified professionals near you.</p>
-      <button class="cta-button rotate-in">Get Started</button>
+      <button class="cta-button rotate-in" onclick="scrollToServices()">Get Started</button>
     </div>
     <!-- Search Bar -->
     <div class="search-bar">
@@ -47,27 +47,43 @@
   <section id="services" class="services">
     <h2>Popular Services</h2>
     <div class="service-cards">
-      <div class="card">
+  <div class="card">
+         <img src="https://media.istockphoto.com/id/1469656864/photo/electrician-engineer-uses-a-multimeter-to-test-the-electrical-installation-and-power-line.jpg?s=612x612&w=0&k=20&c=h70UOpNbJYT5G2oGT-KUeIE3yXwEgsCpr25yR1rnGtU=" alt="Electrician">
+  <h3>Electrician</h3>
+  <p>Certified electrical repair</p>
+  <div class="rating">
+    ★★★☆☆ <span>(4.2 / 120 reviews)</span>
+  </div>
+  <button class="book-btn" data-service="Electrician">Book Now</button>
+</div>
+<div class="card">
         <img src="https://scoutnetworkblog.com/wp-content/uploads/2018/11/Plumber-Sink-201709-003.jpg" alt="Plumber">
-        <h3>Plumbing</h3>
-        <p>Location: India</p>
-      </div>
-      <div class="card">
-        <img src="https://media.istockphoto.com/id/1469656864/photo/electrician-engineer-uses-a-multimeter-to-test-the-electrical-installation-and-power-line.jpg?s=612x612&w=0&k=20&c=h70UOpNbJYT5G2oGT-KUeIE3yXwEgsCpr25yR1rnGtU=" alt="Electrician">
-        <h3>Electrical</h3>
-        <p>Location: India</p>
-      </div>
-      <div class="card">
+  <h3>Plumbing</h3>
+  <p>Certified plumber repair</p>
+  <div class="rating">
+    ★★★★☆ <span>(4.1 / 220 reviews)</span>
+  </div>
+  <button class="book-btn" data-service="Electrician">Book Now</button>
+</div>
+<div class="card">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlW9w63oVgIOQF9qZciQ2xaTCDxJsew55gWg&s" alt="Cleaning">
-        <h3>Cleaning</h3>
-        <p>Location: India</p>
-      </div>
-      <div class="card">
-        <img src="https://5.imimg.com/data5/SELLER/Default/2024/1/381655494/QE/IQ/QE/155969258/home-carpenter-services.jpeg" alt="Carpenter">
-        <h3>Carpentry</h3>
-        <p>Location: India</p>
-      </div>
-    </div>
+  <h3>Cleaning</h3>
+  <p>Cleaning repair</p>
+  <div class="rating">
+    ★★★★☆ <span>(4.3 / 110 reviews)</span>
+  </div>
+  <button class="book-btn" data-service="Electrician">Book Now</button>
+</div>
+<div class="card">
+          <img src="https://5.imimg.com/data5/SELLER/Default/2024/1/381655494/QE/IQ/QE/155969258/home-carpenter-services.jpeg" alt="Carpenter">
+  <h3>Carpentry</h3>
+  <p>Certified carpenter repair</p>
+  <div class="rating">
+    ★★★☆☆ <span>(4.0 / 120 reviews)</span>
+  </div>
+  <button class="book-btn" data-service="Electrician">Book Now</button>
+</div>
+      
   </section>
 
   <!-- Categories Section -->
@@ -114,6 +130,31 @@
       <button type="submit">Send Message</button>
     </form>
   </section>
+  
+<!-- Booking Modal -->
+<div id="bookingModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Book Service</h2>
+    <form id="bookingForm">
+      <input type="text" id="serviceName" readonly />
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" required />
+
+      <label for="time">Time:</label>
+      <input type="time" id="time" required />
+
+      <label for="location">Location:</label>
+      <input type="text" id="location" placeholder="Enter your address" required />
+
+      <label for="contact">Contact Info:</label>
+      <input type="tel" id="contact" placeholder="Enter phone number" required />
+
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </div>
+</div>
 
   <!-- Footer -->
   <footer class="footer">
